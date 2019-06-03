@@ -1,0 +1,13 @@
+﻿<Window x:Class="Hangman_game.MainMenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hangman_game"
+        mc:Ignorable="d"
+        Title="MainMenu" Height="330.25" Width="587.631" Background="#FFADD640">
+    <StackPanel>
+        <TextBlock TextWrapping="Wrap" Text="Hangman game" Height="140" FontSize="72" TextAlignment="Center"/>
+        <Button x:Name="PlayButton" Content="Play" Height="93" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" FontSize="48" Click="Button_Click"/>
+    </StackPanel>
+</Window>
