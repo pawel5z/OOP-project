@@ -4,17 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Simple_games;
 
-namespace Hangman_game
+namespace Simple_games
 {
     class PhrasesContainer
     {
         int count = 0;
-        //Random rng;
 
         public PhrasesContainer()
         {
-            //rng = new Random();
             try
             {
                 using (StreamReader sr = new StreamReader("phrases.dat"))

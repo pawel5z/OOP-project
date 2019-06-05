@@ -4,36 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hangman_game
+namespace Simple_games
 {
     class Phrase
     {
-        string phrase = "";
-        string category = "";
-        string hiddenPhraseToDisplay = "";
-        string hiddenPhrase = "";
+        private string content = "";
+        private string category = "";
+        private string hiddenPhraseToDisplay = "";
+        private string hiddenPhrase = "";
 
         public Phrase(string phrase, string category)
         {
-            this.phrase = phrase;
+            this.content = phrase;
             this.category = category;
             GenerateHiddenPhrase();
         }
 
-        public string GetPhraseStr()
-        { return phrase; }
+        public string Content
+        {
+            get { return content; }
+        }
 
-        public string GetCategoryStr()
-        { return category; }
+        public string Category
+        {
+            get { return category; }
+        }
 
-        public string GetHiddenPhraseToDisplayStr()
-        { return hiddenPhraseToDisplay; }
-
+        public string HiddenPhraseToDisplay
+        {
+            get { return hiddenPhraseToDisplay; }
+        }
         void GenerateHiddenPhrase()
         {
-            for (int i = 0; i < phrase.Length; i++)
+            for (int i = 0; i < content.Length; i++)
             {
-                if (phrase[i] == ' ')
+                if (content[i] == ' ')
                     hiddenPhrase += ' ';
                 else
                     hiddenPhrase += '_';
@@ -59,7 +64,7 @@ namespace Hangman_game
         {
             char[] hiddenPhraseChars = hiddenPhrase.ToCharArray();
             for (int i = 0; i < hiddenPhrase.Length; i++)
-                if (phrase[i] == c)
+                if (content[i] == c)
                     hiddenPhraseChars[i] = c;
             hiddenPhrase = new string(hiddenPhraseChars);
             hiddenPhraseToDisplay = ConvertToDisplayFormat(hiddenPhrase);

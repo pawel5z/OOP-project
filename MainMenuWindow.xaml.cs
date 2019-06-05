@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Hangman_game
+namespace Simple_games
 {
     /// <summary>
     /// Logika interakcji dla klasy MainMenu.xaml
@@ -28,10 +28,15 @@ namespace Hangman_game
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
-            if (button.Name == "PlayButton")
+            if (button.Name == "HangmanGameButton")
             {
                 mainWindow = new MainWindow();
+                Console.WriteLine("WORKS");
                 mainWindow.Show();
+                Close();
+            }
+            else if (button.Name == "QuitButton")
+            {
                 Close();
             }
         }

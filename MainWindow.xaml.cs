@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
-namespace Hangman_game
+namespace Simple_games
 {
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
@@ -18,7 +18,11 @@ namespace Hangman_game
         {
             PhrasesContainer phrasesContainer = new PhrasesContainer();
             statusImageManager = new StatusImageManager();
-            phrase = phrasesContainer.RandomPhrase;
+            do
+            {
+                phrase = phrasesContainer.RandomPhrase;
+            }
+            while (phrase.Content == "");
             InitializeComponent();
             statusImageManager.SetCurrentImage(StatusImage);
             PlacePhrase(phrase);
@@ -33,14 +37,13 @@ namespace Hangman_game
                 textBox.IsEnabled = false;
                 if (guessStr.Length == 1)
                 {
-                    string phraseStr = phrase.GetPhraseStr();
+                    string phraseStr = phrase.Content;
                     if (phraseStr.Contains(guessStr[0].ToString()))
                     {
                         phrase.UncoverCharacters(guessStr[0]);
-                        PhraseTextBlock.Text = phrase.GetHiddenPhraseToDisplayStr();
+                        PhraseTextBlock.Text = phrase.HiddenPhraseToDisplay;
                         if (phrase.IsDecrypted())
                         {
-                            //textBox.IsEnabled = false;
                             GameOver("You win!");
                         }
                     }
@@ -50,7 +53,6 @@ namespace Hangman_game
                         statusImageManager.SetNextImage(StatusImage);
                         if (statusImageManager.GetCurrentImgNr() >= statusImageManager.GetMaxImgNr() - 1)
                         {
-                            //textBox.IsEnabled = false;
                             GameOver("You lose!");
                         }
                     }
@@ -62,17 +64,15 @@ namespace Hangman_game
 
         void PlacePhrase(Phrase phrase)
         {
-            CategoryTextBlock.Text = phrase.GetCategoryStr();
-            PhraseTextBlock.Text = phrase.GetHiddenPhraseToDisplayStr();
+            CategoryTextBlock.Text = phrase.Category;
+            PhraseTextBlock.Text = phrase.HiddenPhraseToDisplay;
         }
 
         void GameOver(string dispString)
         {
             GuessTextBox.IsReadOnly = true;
             GameOverWindow gameOverWindow = new GameOverWindow(dispString, this);
-            //Task.Delay(1000).Cont
             gameOverWindow.Show();
-            //Close();
         }
     }
 }

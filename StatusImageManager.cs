@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using System.Windows.Controls;
 
-namespace Hangman_game
+namespace Simple_games
 {
     class StatusImageManager
     {
@@ -17,14 +17,16 @@ namespace Hangman_game
 
         public StatusImageManager()
         {
-            imgCollection = new List<BitmapImage>();
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows0.png", UriKind.Relative)));
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows1.png", UriKind.Relative)));
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows2.png", UriKind.Relative)));
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows3.png", UriKind.Relative)));
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows4.png", UriKind.Relative)));
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows5.png", UriKind.Relative)));
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows6.png", UriKind.Relative)));
+            imgCollection = new List<BitmapImage>
+            {
+                new BitmapImage(new Uri("assets\\gallows0.png", UriKind.Relative)),
+                new BitmapImage(new Uri("assets\\gallows1.png", UriKind.Relative)),
+                new BitmapImage(new Uri("assets\\gallows2.png", UriKind.Relative)),
+                new BitmapImage(new Uri("assets\\gallows3.png", UriKind.Relative)),
+                new BitmapImage(new Uri("assets\\gallows4.png", UriKind.Relative)),
+                new BitmapImage(new Uri("assets\\gallows5.png", UriKind.Relative)),
+                new BitmapImage(new Uri("assets\\gallows6.png", UriKind.Relative))
+            };
         }
 
         public void SetCurrentImage(Image img)
