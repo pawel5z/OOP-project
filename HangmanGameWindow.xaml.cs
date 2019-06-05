@@ -9,12 +9,12 @@ namespace Simple_games
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class HangmanGameWindow : Window
     {
-        Phrase phrase;
-        StatusImageManager statusImageManager;
+        private Phrase phrase;
+        private StatusImageManager statusImageManager;
         
-        public MainWindow()
+        public HangmanGameWindow()
         {
             PhrasesContainer phrasesContainer = new PhrasesContainer();
             statusImageManager = new StatusImageManager();

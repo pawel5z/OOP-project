@@ -19,7 +19,7 @@ namespace Simple_games
     /// </summary>
     public partial class MainMenuWindow : Window
     {
-        MainWindow mainWindow;
+        Window gameWindow;
         public MainMenuWindow()
         {
             InitializeComponent();
@@ -30,9 +30,9 @@ namespace Simple_games
             Button button = (Button)sender;
             if (button.Name == "HangmanGameButton")
             {
-                mainWindow = new MainWindow();
+                gameWindow = new HangmanGameWindow();
                 Console.WriteLine("WORKS");
-                mainWindow.Show();
+                gameWindow.Show();
                 Close();
             }
             else if (button.Name == "QuitButton")
