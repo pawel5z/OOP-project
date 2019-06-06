@@ -27,39 +27,35 @@ namespace Simple_games
             statusImageManager.SetCurrentImage(StatusImage);
             PlacePhrase(phrase);
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void GuessTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
-            if (textBox.Name == "GuessTextBox")
+            string guessStr = textBox.Text;
+            textBox.IsEnabled = false;
+            if (guessStr.Length == 1)
             {
-                string guessStr = textBox.Text;
-                textBox.IsEnabled = false;
-                if (guessStr.Length == 1)
+                string phraseStr = phrase.Content;
+                if (phraseStr.Contains(guessStr[0].ToString()))
                 {
-                    string phraseStr = phrase.Content;
-                    if (phraseStr.Contains(guessStr[0].ToString()))
+                    phrase.UncoverCharacters(guessStr[0]);
+                    PhraseTextBlock.Text = phrase.HiddenPhraseToDisplay;
+                    if (phrase.IsDecrypted())
                     {
-                        phrase.UncoverCharacters(guessStr[0]);
-                        PhraseTextBlock.Text = phrase.HiddenPhraseToDisplay;
-                        if (phrase.IsDecrypted())
-                        {
-                            GameOver("You win!");
-                        }
-                    }
-                    else if (!MissesTextBlock.Text.Contains(guessStr[0].ToString()))
-                    {
-                        MissesTextBlock.Text += guessStr[0].ToString() + " ";
-                        statusImageManager.SetNextImage(StatusImage);
-                        if (statusImageManager.GetCurrentImgNr() >= statusImageManager.GetMaxImgNr() - 1)
-                        {
-                            GameOver("You lose!");
-                        }
+                        GameOver("You win!");
                     }
                 }
-                textBox.Clear();
-                textBox.IsEnabled = true;
+                else if (!MissesTextBlock.Text.Contains(guessStr[0].ToString()))
+                {
+                    MissesTextBlock.Text += guessStr[0].ToString() + " ";
+                    statusImageManager.SetNextImage(StatusImage);
+                    if (statusImageManager.CurrentImgNr >= statusImageManager.ImgCount - 1)
+                    {
+                        GameOver("You lose!");
+                    }
+                }
             }
+            textBox.Clear();
+            textBox.IsEnabled = true;
         }
 
         void PlacePhrase(Phrase phrase)
@@ -74,5 +70,7 @@ namespace Simple_games
             GameOverWindow gameOverWindow = new GameOverWindow(dispString, this);
             gameOverWindow.Show();
         }
+
+
     }
 }

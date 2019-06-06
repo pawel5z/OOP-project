@@ -12,7 +12,7 @@ namespace Simple_games
     class StatusImageManager
     {
         List<BitmapImage> imgCollection;
-        int current = 0;
+        int currentImgNr = 0;
         int imgCount = 7;
 
         public StatusImageManager()
@@ -31,19 +31,19 @@ namespace Simple_games
 
         public void SetCurrentImage(Image img)
         {
-            img.Source = imgCollection[current];
+            img.Source = imgCollection[currentImgNr];
         }
 
         public void SetNextImage(Image img)
         {
-            current = current + 1;
+            currentImgNr = currentImgNr + 1;
             SetCurrentImage(img);
         }
 
-        public int GetCurrentImgNr()
-        { return current; }
+        public int CurrentImgNr
+        { get { return currentImgNr; } }
 
-        public int GetMaxImgNr()
-        { return imgCount; }
+        public int ImgCount
+        { get { return imgCount; } }
     }
 }

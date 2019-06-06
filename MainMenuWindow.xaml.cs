@@ -25,20 +25,24 @@ namespace Simple_games
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void HangmanGameButton_Click(object sender, RoutedEventArgs e)
         {
-            Button button = (Button)sender;
-            if (button.Name == "HangmanGameButton")
-            {
-                gameWindow = new HangmanGameWindow();
-                Console.WriteLine("WORKS");
-                gameWindow.Show();
-                Close();
-            }
-            else if (button.Name == "QuitButton")
-            {
-                Close();
-            }
+            gameWindow = new HangmanGameWindow();
+            gameWindow.Show();
+            Close();
         }
+
+        private void TicTacToeButton_Click(object sender, RoutedEventArgs e)
+        {
+            gameWindow = new TicTacToeWindow();
+            gameWindow.Show();
+            Close();
+        }
+
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
     }
 }

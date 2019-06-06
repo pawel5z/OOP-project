@@ -5,9 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple_games"
         mc:Ignorable="d"
-        Title="TicTacToeWindow" Height="450" Width="800">
+        Title="TicTacToeWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="300" Margin="236,59,0,0" VerticalAlignment="Top" Width="300"/>
+        <UniformGrid x:Name="BoardGrid" HorizontalAlignment="Center" Height="300" Margin="0" VerticalAlignment="Center" Width="300" Rows="3" Columns="3">
+            <Button FontSize="72" FontWeight="Bold" Content="O" Click="Button_Click"/>
+            <Button FontSize="72" FontWeight="Bold" Content="O" Click="Button_Click_1"/>
+            <Button FontSize="72" FontWeight="Bold" Content="O"/>
+            <Button FontSize="72" FontWeight="Bold" Content="O"/>
+            <Button FontSize="72" FontWeight="Bold" Content="O"/>
+            <Button FontSize="72" FontWeight="Bold" Content="O"/>
+            <Button FontSize="72" FontWeight="Bold" Content="O"/>
+            <Button FontSize="72" FontWeight="Bold" Content="O"/>
+            <Button FontSize="72" FontWeight="Bold" Content="O"/>
+        </UniformGrid>
 
     </Grid>
 </Window>

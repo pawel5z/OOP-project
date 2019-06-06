@@ -30,16 +30,12 @@ namespace Simple_games
             EndTextBlock.Text = dispString;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void MainMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            Button button = (Button)sender;
-            if (button.Name == "MainMenuButton")
-            {
-                mainMenuWindow = new MainMenuWindow();
-                mainMenuWindow.Show();
-                toClose.Close();
-                Close();
-            }
+            mainMenuWindow = new MainMenuWindow();
+            mainMenuWindow.Show();
+            toClose.Close();
+            Close();
         }
     }
 }

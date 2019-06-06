@@ -27,7 +27,7 @@
             </Grid>
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Center" Height="113">
                 <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Guess" VerticalAlignment="Center" Height="77" Width="148" FontSize="48"/>
-                <TextBox x:Name="GuessTextBox" Height="64" TextWrapping="Wrap" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" TextChanged="TextBox_TextChanged" FontSize="48" TextAlignment="Center"/>
+                <TextBox x:Name="GuessTextBox" Height="64" TextWrapping="Wrap" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" TextChanged="GuessTextBox_TextChanged" FontSize="48" TextAlignment="Center"/>
             </StackPanel>
         </StackPanel>
         <Image x:Name="StatusImage" Width="345" Height="399" Canvas.Left="10" Canvas.Top="10" Stretch="Fill" Cursor="None"/>

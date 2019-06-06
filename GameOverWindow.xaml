@@ -8,7 +8,6 @@
         Title="Game Over" Background="#FFF7FFA5" Height="336" Width="473.667" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBlock x:Name="EndTextBlock" HorizontalAlignment="Center" Height="109" TextWrapping="Wrap" VerticalAlignment="Top" Width="343" FontSize="72" TextAlignment="Center" Margin="44,32,44,0"/>
-        <Button x:Name="MainMenuButton" Content="Main menu" Height="77" VerticalAlignment="Center" Margin="140,163,136,65" HorizontalAlignment="Center" Width="190" Click="Button_Click" FontSize="36"/>
-
+        <Button x:Name="MainMenuButton" Content="Main menu" Height="77" VerticalAlignment="Center" Margin="140,163,136,65" HorizontalAlignment="Center" Width="190" Click="MainMenuButton_Click" FontSize="36"/>
     </Grid>
 </Window>

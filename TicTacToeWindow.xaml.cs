@@ -22,6 +22,18 @@ namespace Simple_games
         public TicTacToeWindow()
         {
             InitializeComponent();
+            UIElementCollection children = BoardGrid.Children;
+            (children[3] as Button).Content = "Foo";
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

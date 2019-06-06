@@ -52,11 +52,10 @@ namespace Simple_games
             for (int i = 0; i < s.Length; i++)
             {
                 if (s[i] == ' ')
-                    retVal += ' ';
+                    retVal += " ";
                 else
                     retVal += s[i] + " ";
             }
-            retVal.Remove(retVal.Length - 1);
             return retVal;
         }
         
