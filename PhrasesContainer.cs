@@ -16,7 +16,7 @@ namespace Simple_games
         {
             try
             {
-                using (StreamReader sr = new StreamReader("phrases.dat"))
+                using (StreamReader sr = new StreamReader("assets\\phrases.dat"))
                 {
                     while (!sr.EndOfStream)
                     {
@@ -43,7 +43,7 @@ namespace Simple_games
                 string phrase = "";
                 try
                 {
-                    using (StreamReader sr = new StreamReader("phrases.dat"))
+                    using (StreamReader sr = new StreamReader("assets\\phrases.dat"))
                     {
                         while (!sr.EndOfStream && i < phraseNr)
                         {
