@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple_games"
         mc:Ignorable="d"
-        Title="Simple games" Height="330" Width="250" Background="#FFADD640" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Simple games" Height="400" Width="300" Background="#FFADD640" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <StackPanel Margin="10">
         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Simple games" FontSize="60" TextAlignment="Center" LineStackingStrategy="BlockLineHeight" LineHeight="50" Margin="0,10,0,10"/>
         <Button x:Name="HangmanGameButton" Content="Hangman game" Height="42" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" FontSize="22" Click="HangmanGameButton_Click" RenderTransformOrigin="0.5,0.5" Margin="0,10,0,1"/>
