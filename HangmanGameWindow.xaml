@@ -6,31 +6,33 @@
         xmlns:local="clr-namespace:Simple_games"
         mc:Ignorable="d"
         Title="Hangman game" Background="#FFD2DC70" MinWidth="800" MinHeight="450" Width="800" Height="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Canvas Margin="0,0,2,0">
+    <StackPanel Margin="10,10,10,10" Orientation="Horizontal">
+        <Image x:Name="StatusImage" Height="399" Width="325" Stretch="Fill" Cursor="None" Margin="0,0,5,0"/>
 
-        <StackPanel Height="399" VerticalAlignment="Top" Width="398" Canvas.Left="360" Canvas.Top="10">
-            <Grid VerticalAlignment="Center" Width="395" Height="67" Margin="2,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150*"/>
-                    <ColumnDefinition Width="167*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock TextWrapping="Wrap" FontSize="24" Width="110" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50,4,157,4" Grid.ColumnSpan="2"><Run Text="Category"/><Run Text=":"/></TextBlock>
-                <TextBlock x:Name="CategoryTextBlock" x:FieldModifier="public" TextWrapping="Wrap" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" MinWidth="20" MinHeight="20"/>
-            </Grid>
-            <Grid VerticalAlignment="Top" Height="101">
-                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Phrase" VerticalAlignment="Center" FontSize="48" Height="71" Width="156"/>
-                <TextBlock x:Name="PhraseTextBlock" TextWrapping="Wrap" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Right" MinWidth="30" MinHeight="30"/>
-            </Grid>
-            <Grid Height="117">
-                <TextBlock TextWrapping="Wrap" FontSize="48" Height="64" Width="159" Margin="0,26,239,27" VerticalAlignment="Center" HorizontalAlignment="Center"><Run Text="Misses"/><Run Text=":"/><LineBreak/><Run Text=":"/></TextBlock>
-                <TextBlock x:Name="MissesTextBlock" TextWrapping="Wrap" Margin="164,6,0,7" FontSize="48" VerticalAlignment="Center" TextDecorations="Strikethrough"/>
-            </Grid>
-            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Center" Height="113">
-                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Guess" VerticalAlignment="Center" Height="77" Width="148" FontSize="48"/>
-                <TextBox x:Name="GuessTextBox" Height="64" TextWrapping="Wrap" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" TextChanged="GuessTextBox_TextChanged" FontSize="48" TextAlignment="Center"/>
+        <StackPanel Margin="5,0,0,0" Orientation="Vertical" HorizontalAlignment="Right" Width="439">
+
+            <DockPanel Margin="0,5,0,5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <TextBlock Text="Category" TextWrapping="Wrap" FontSize="48" VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="5,10,5,10"/>
+                <TextBlock x:Name="CategoryTextBlock" x:FieldModifier="public" TextWrapping="Wrap" FontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="5,10,5,10"/>
+            </DockPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,5" HorizontalAlignment="Stretch">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Phrase" VerticalAlignment="Center" FontSize="48" Margin="5,10,10,10"/>
+                <TextBlock x:Name="PhraseTextBlock" TextWrapping="Wrap" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,10,5,10"/>
             </StackPanel>
-        </StackPanel>
-        <Image x:Name="StatusImage" Width="345" Height="399" Canvas.Left="10" Canvas.Top="10" Stretch="Fill" Cursor="None"/>
 
-    </Canvas>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,5" HorizontalAlignment="Stretch">
+                <TextBlock Text="Misses" TextWrapping="Wrap" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,10,5,10"/>
+                <TextBlock x:Name="MissesTextBlock" TextWrapping="Wrap" FontSize="48" VerticalAlignment="Center" TextDecorations="Strikethrough" Margin="5,10,5,10"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,5" HorizontalAlignment="Stretch">
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Guess" VerticalAlignment="Center" FontSize="48" Margin="5,10,5,10"/>
+                <TextBox x:Name="GuessTextBox" Width="60" TextWrapping="Wrap" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextChanged="GuessTextBox_TextChanged" FontSize="48" TextAlignment="Center" Margin="20,10,5,10"/>
+            </StackPanel>
+
+        </StackPanel>
+
+
+    </StackPanel>
 </Window>

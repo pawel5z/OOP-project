@@ -26,6 +26,7 @@ namespace Simple_games
                 "O"
             };
         private int curPlrSymNr = 0;
+        private int occupiedFields = 0;
 
         public TicTacToeWindow()
         {
@@ -36,10 +37,13 @@ namespace Simple_games
         {
             Button boardButton = (Button)sender;
             boardButton.Content = playerSymbols[curPlrSymNr];
+            occupiedFields++;
             if (CheckForWin(playerSymbols[curPlrSymNr], (UniformGrid)boardButton.Parent))
             {
                 GameOver(playerSymbols[curPlrSymNr] + " wins!");
             }
+            else if (occupiedFields == 9)
+                GameOver("Draw!");
             curPlrSymNr = (curPlrSymNr + 1) % playerSymbols.Count;
             boardButton.IsEnabled = false; /// deactivate button in order not to take care of it anymore (it has already got 'X' or 'O')
         }
