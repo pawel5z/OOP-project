@@ -19,13 +19,11 @@ namespace Simple_games
     /// </summary>
     public partial class GameOverWindow : Window
     {
-        string dispString = "";
-        Window toClose;
+        private readonly Window toClose;
         MainMenuWindow mainMenuWindow;
         public GameOverWindow(string dispString, Window toClose)
         {
             this.toClose = toClose;
-            this.dispString = dispString;
             InitializeComponent();
             EndTextBlock.Text = dispString;
         }

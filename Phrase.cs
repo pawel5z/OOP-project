@@ -8,8 +8,8 @@ namespace Simple_games
 {
     class Phrase
     {
-        private string content = "";
-        private string category = "";
+        private readonly string content = "";
+        private readonly string category = "";
         private string hiddenPhraseToDisplay = "";
         private string hiddenPhrase = "";
 

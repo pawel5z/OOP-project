@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple_games"
         mc:Ignorable="d"
-        Title="TicTacToeWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Tic Tac Toe" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <UniformGrid x:Name="BoardGrid" HorizontalAlignment="Center" Height="300" Margin="0" VerticalAlignment="Center" Width="300" Rows="3" Columns="3">
-            <Button FontSize="72" FontWeight="Bold" Content="O" Click="Button_Click"/>
-            <Button FontSize="72" FontWeight="Bold" Content="O" Click="Button_Click_1"/>
-            <Button FontSize="72" FontWeight="Bold" Content="O"/>
-            <Button FontSize="72" FontWeight="Bold" Content="O"/>
-            <Button FontSize="72" FontWeight="Bold" Content="O"/>
-            <Button FontSize="72" FontWeight="Bold" Content="O"/>
-            <Button FontSize="72" FontWeight="Bold" Content="O"/>
-            <Button FontSize="72" FontWeight="Bold" Content="O"/>
-            <Button FontSize="72" FontWeight="Bold" Content="O"/>
+            <Button FontSize="72" FontWeight="Bold" Click="BoardButton_Click"/>
+            <Button FontSize="72" FontWeight="Bold" Click="BoardButton_Click"/>
+            <Button FontSize="72" FontWeight="Bold" Click="BoardButton_Click"/>
+            <Button FontSize="72" FontWeight="Bold" Click="BoardButton_Click"/>
+            <Button FontSize="72" FontWeight="Bold" Click="BoardButton_Click"/>
+            <Button FontSize="72" FontWeight="Bold" Click="BoardButton_Click"/>
+            <Button FontSize="72" FontWeight="Bold" Click="BoardButton_Click"/>
+            <Button FontSize="72" FontWeight="Bold" Click="BoardButton_Click"/>
+            <Button FontSize="72" FontWeight="Bold" Click="BoardButton_Click"/>
         </UniformGrid>
 
     </Grid>

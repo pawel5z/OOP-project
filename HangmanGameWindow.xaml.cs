@@ -11,8 +11,8 @@ namespace Simple_games
     /// </summary>
     public partial class HangmanGameWindow : Window
     {
-        private Phrase phrase;
-        private StatusImageManager statusImageManager;
+        private readonly Phrase phrase;
+        private readonly StatusImageManager statusImageManager;
         
         public HangmanGameWindow()
         {
