@@ -110,6 +110,7 @@ namespace Simple_games
         }
         void GameOver(string dispString)
         {
+            IsEnabled = false;
             GameOverWindow gameOverWindow = new GameOverWindow(dispString, this);
             gameOverWindow.Show();
         }

@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple_games"
         mc:Ignorable="d"
-        Title="Game Over" Background="#FFF7FFA5" Height="336" Width="473.667" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <TextBlock x:Name="EndTextBlock" HorizontalAlignment="Center" Height="109" TextWrapping="Wrap" VerticalAlignment="Top" Width="343" FontSize="72" TextAlignment="Center" Margin="44,32,44,0"/>
-        <Button x:Name="MainMenuButton" Content="Main menu" Height="77" VerticalAlignment="Center" Margin="140,163,136,65" HorizontalAlignment="Center" Width="190" Click="MainMenuButton_Click" FontSize="36"/>
+        Title="Game Over" Background="#FFE4E404" Height="336" Width="475" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Viewbox Stretch="Fill">
+    <Grid Margin="10">
+        <TextBlock x:Name="EndTextBlock" HorizontalAlignment="Center" Height="100" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" FontSize="72" TextAlignment="Center" Margin="25,20,33,0"/>
+        <Button x:Name="MainMenuButton" Content="Main menu" Height="77" VerticalAlignment="Center" Margin="120,165,128,45" HorizontalAlignment="Center" Width="200" Click="MainMenuButton_Click" FontSize="36"/>
     </Grid>
+    </Viewbox>
 </Window>

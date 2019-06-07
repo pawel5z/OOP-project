@@ -15,11 +15,10 @@
                 <TextBlock Text="Category" TextWrapping="Wrap" FontSize="48" VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="5,10,5,10"/>
                 <TextBlock x:Name="CategoryTextBlock" x:FieldModifier="public" TextWrapping="Wrap" FontSize="24" VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="5,10,5,10"/>
             </DockPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="0,5,0,5" HorizontalAlignment="Stretch">
+            <DockPanel Margin="0,5,0,5" HorizontalAlignment="Stretch">
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Phrase" VerticalAlignment="Center" FontSize="48" Margin="5,10,10,10"/>
                 <TextBlock x:Name="PhraseTextBlock" TextWrapping="Wrap" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,10,5,10"/>
-            </StackPanel>
+            </DockPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,5,0,5" HorizontalAlignment="Stretch">
                 <TextBlock Text="Misses" TextWrapping="Wrap" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,10,5,10"/>
