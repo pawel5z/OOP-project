@@ -4,8 +4,8 @@
     {
         private readonly string content = "";
         private readonly string category = "";
-        private string hiddenPhraseToDisplay = "";
-        private string hiddenPhrase = "";
+        private string hiddenContentToDisplay = "";
+        private string hiddenContent = "";
 
         public Phrase(string phrase, string category)
         {
@@ -26,18 +26,18 @@
 
         public string HiddenPhraseToDisplay
         {
-            get { return hiddenPhraseToDisplay; }
+            get { return hiddenContentToDisplay; }
         }
         void GenerateHiddenPhrase()
         {
             for (int i = 0; i < content.Length; i++)
             {
                 if (content[i] == ' ')
-                    hiddenPhrase += ' ';
+                    hiddenContent += ' ';
                 else
-                    hiddenPhrase += '_';
+                    hiddenContent += '_';
             }
-            hiddenPhraseToDisplay = ConvertToDisplayFormat(hiddenPhrase);
+            hiddenContentToDisplay = ConvertToDisplayFormat(hiddenContent);
         }
 
         string ConvertToDisplayFormat(string s)
@@ -55,18 +55,18 @@
 
         public void UncoverCharacters(char c)
         {
-            char[] hiddenPhraseChars = hiddenPhrase.ToCharArray();
-            for (int i = 0; i < hiddenPhrase.Length; i++)
+            char[] hiddenPhraseChars = hiddenContent.ToCharArray();
+            for (int i = 0; i < hiddenContent.Length; i++)
                 if (content[i] == c)
                     hiddenPhraseChars[i] = c;
-            hiddenPhrase = new string(hiddenPhraseChars);
-            hiddenPhraseToDisplay = ConvertToDisplayFormat(hiddenPhrase);
+            hiddenContent = new string(hiddenPhraseChars);
+            hiddenContentToDisplay = ConvertToDisplayFormat(hiddenContent);
         }
 
         public bool IsDecrypted()
         {
-            for (int i = 0; i < hiddenPhrase.Length; i++)
-                if (hiddenPhrase[i] == '_')
+            for (int i = 0; i < hiddenContent.Length; i++)
+                if (hiddenContent[i] == '_')
                     return false;
             return true;
         }

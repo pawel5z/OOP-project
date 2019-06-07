@@ -3,9 +3,6 @@ using System.Windows.Controls;
 
 namespace Simple_games
 {
-    /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
-    /// </summary>
     public partial class HangmanGameWindow : Window
     {
         private readonly Phrase phrase;
@@ -13,13 +10,13 @@ namespace Simple_games
 
         public HangmanGameWindow()
         {
-            PhrasesContainer phrasesContainer = new PhrasesContainer();
+            PhrasesContainer phrasesContainer = PhrasesContainer.Instance();
             do
             {
                 phrase = phrasesContainer.RandomPhrase;
             }
             while (phrase.Content == "");
-            statusImageManager = new StatusImageManager();
+            statusImageManager = StatusImageManager.Instance();
             InitializeComponent();
             statusImageManager.SetNextImage(StatusImage);
             PlacePhrase(phrase);
@@ -63,7 +60,7 @@ namespace Simple_games
 
         void GameOver(string dispString)
         {
-            GuessTextBox.IsReadOnly = true;
+            IsEnabled = false;
             GameOverWindow gameOverWindow = new GameOverWindow(dispString, this);
             gameOverWindow.Show();
         }

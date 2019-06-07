@@ -5,33 +5,41 @@ using System.Windows.Media.Imaging;
 
 namespace Simple_games
 {
-    class StatusImageManager
+    /// <summary>
+    /// Singleton class, because many instances of this class aren't desired
+    /// </summary>
+    sealed class StatusImageManager
     {
+        private static StatusImageManager instance;
         private readonly List<BitmapImage> imgCollection;
-        int currentImgNr = -1;
+        private int currentImgNr = -1;
 
-        public StatusImageManager()
+        private StatusImageManager()
         {
             imgCollection = new List<BitmapImage>
-            {
-                new BitmapImage(new Uri("assets\\gallows0.png", UriKind.Relative)),
-                new BitmapImage(new Uri("assets\\gallows1.png", UriKind.Relative)),
-                new BitmapImage(new Uri("assets\\gallows2.png", UriKind.Relative)),
-                new BitmapImage(new Uri("assets\\gallows3.png", UriKind.Relative)),
-                new BitmapImage(new Uri("assets\\gallows4.png", UriKind.Relative)),
-                new BitmapImage(new Uri("assets\\gallows5.png", UriKind.Relative)),
-                new BitmapImage(new Uri("assets\\gallows6.png", UriKind.Relative))
-            };
+                {
+                    new BitmapImage(new Uri("assets\\gallows0.png", UriKind.Relative)),
+                    new BitmapImage(new Uri("assets\\gallows1.png", UriKind.Relative)),
+                    new BitmapImage(new Uri("assets\\gallows2.png", UriKind.Relative)),
+                    new BitmapImage(new Uri("assets\\gallows3.png", UriKind.Relative)),
+                    new BitmapImage(new Uri("assets\\gallows4.png", UriKind.Relative)),
+                    new BitmapImage(new Uri("assets\\gallows5.png", UriKind.Relative)),
+                    new BitmapImage(new Uri("assets\\gallows6.png", UriKind.Relative))
+                };
         }
 
-        //public void SetCurrentImage(Image img)
-        //{
-        //    img.Source = imgCollection[currentImgNr];
-        //}
+        public static StatusImageManager Instance()
+        {
+            if (instance == null)
+            {
+                instance = new StatusImageManager();
+            }
+            return instance;
+        }
 
         public void SetNextImage(Image img)
         {
-            currentImgNr = currentImgNr + 1;
+            currentImgNr += 1;
             img.Source = imgCollection[currentImgNr];
         }
 

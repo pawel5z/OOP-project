@@ -19,9 +19,7 @@ namespace Simple_games
         public TicTacToeWindow()
         {
             InitializeComponent();
-            Hide();
             UpdateCurPlrTextBlock(players[curPlrNr].PlayerSymbol, players[curPlrNr].PlayerBrush);
-            Show();
         }
 
         private void BoardButton_Click(object sender, RoutedEventArgs e)
@@ -43,6 +41,7 @@ namespace Simple_games
         bool CheckForWin(string plrSym, UniformGrid boardGrid)
         {
             Button[,] boardButtons = new Button[3, 3];
+            /// convert list of buttons to 2d array of buttons for more convenient usage
             for (int i = 0, j = 0, k = 0; k < boardGrid.Children.Count; k++)
             {
                 boardButtons[i, j] = (Button)boardGrid.Children[k];

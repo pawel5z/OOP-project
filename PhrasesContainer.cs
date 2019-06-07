@@ -3,11 +3,12 @@ using System.IO;
 
 namespace Simple_games
 {
-    class PhrasesContainer
+    sealed class PhrasesContainer
     {
-        int count = 0;
+        private static PhrasesContainer instance;
+        private readonly int count = 0;
 
-        public PhrasesContainer()
+        private PhrasesContainer()
         {
             try
             {
@@ -26,6 +27,13 @@ namespace Simple_games
                 Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
             }
+        }
+
+        public static PhrasesContainer Instance()
+        {
+            if (instance == null)
+                instance = new PhrasesContainer();
+            return instance;
         }
 
         public Phrase RandomPhrase
