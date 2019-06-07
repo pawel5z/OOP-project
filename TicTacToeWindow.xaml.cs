@@ -15,43 +15,42 @@ using System.Windows.Shapes;
 
 namespace Simple_games
 {
-    /// <summary>
-    /// Interaction logic for TicTacToeWindow.xaml
-    /// </summary>
     public partial class TicTacToeWindow : Window
     {
-        private readonly List<string> playerSymbols = new List<string>
-            {
-                "X",
-                "O"
-            };
-        private int curPlrSymNr = 0;
+        private readonly List<Player> players = new List<Player>
+        {
+            new Player("X", Brushes.DarkOrange),
+            new Player("O", Brushes.Purple)
+        };
+        private int curPlrNr = 0;
         private int occupiedFields = 0;
 
         public TicTacToeWindow()
         {
             InitializeComponent();
+            Hide();
+            UpdateCurPlrTextBlock(players[curPlrNr].PlayerSymbol, players[curPlrNr].PlayerBrush);
+            Show();
         }
 
         private void BoardButton_Click(object sender, RoutedEventArgs e)
         {
             Button boardButton = (Button)sender;
-            boardButton.Content = playerSymbols[curPlrSymNr];
+            PlaceSymbol(boardButton, players[curPlrNr]);
             occupiedFields++;
-            if (CheckForWin(playerSymbols[curPlrSymNr], (UniformGrid)boardButton.Parent))
+            if (CheckForWin(players[curPlrNr].PlayerSymbol, (UniformGrid)boardButton.Parent))
             {
-                GameOver(playerSymbols[curPlrSymNr] + " wins!");
+                GameOver("\'" + players[curPlrNr].PlayerSymbol + "\'" + " wins!");
             }
             else if (occupiedFields == 9)
                 GameOver("Draw!");
-            curPlrSymNr = (curPlrSymNr + 1) % playerSymbols.Count;
+            curPlrNr = (curPlrNr + 1) % players.Count;
+            UpdateCurPlrTextBlock(players[curPlrNr].PlayerSymbol, players[curPlrNr].PlayerBrush);
             boardButton.IsEnabled = false; /// deactivate button in order not to take care of it anymore (it has already got 'X' or 'O')
         }
 
         bool CheckForWin(string plrSym, UniformGrid boardGrid)
         {
-            Console.WriteLine("HERE I AM");
-
             Button[,] boardButtons = new Button[3, 3];
             for (int i = 0, j = 0, k = 0; k < boardGrid.Children.Count; k++)
             {
@@ -113,6 +112,18 @@ namespace Simple_games
         {
             GameOverWindow gameOverWindow = new GameOverWindow(dispString, this);
             gameOverWindow.Show();
+        }
+
+        void UpdateCurPlrTextBlock(string plrSymbol, Brush plrBrush)
+        {
+            curPlrTextBlock.Text = plrSymbol;
+            curPlrTextBlock.Foreground = plrBrush;
+        }
+
+        void PlaceSymbol(Button button, Player plr)
+        {
+            button.Content = plr.PlayerSymbol;
+            button.Foreground = plr.PlayerBrush;
         }
     }
 }
