@@ -111,6 +111,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="assets\gallows0.png" />
+    <Resource Include="assets\gallows1.png" />
+    <Resource Include="assets\gallows2.png" />
+    <Resource Include="assets\gallows3.png" />
+    <Resource Include="assets\gallows4.png" />
+    <Resource Include="assets\gallows5.png" />
+    <Resource Include="assets\gallows6.png" />
     <Content Include="assets\phrases.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -122,15 +129,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="assets\gallows0.png" />
-    <Resource Include="assets\gallows1.png" />
-    <Resource Include="assets\gallows2.png" />
-    <Resource Include="assets\gallows3.png" />
-    <Resource Include="assets\gallows4.png" />
-    <Resource Include="assets\gallows5.png" />
-    <Resource Include="assets\gallows6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

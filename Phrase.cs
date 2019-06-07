@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Simple_games
+﻿namespace Simple_games
 {
     class Phrase
     {
@@ -58,7 +52,7 @@ namespace Simple_games
             }
             return retVal;
         }
-        
+
         public void UncoverCharacters(char c)
         {
             char[] hiddenPhraseChars = hiddenPhrase.ToCharArray();

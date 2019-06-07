@@ -1,8 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
 
 namespace Simple_games
 {
@@ -13,18 +10,18 @@ namespace Simple_games
     {
         private readonly Phrase phrase;
         private readonly StatusImageManager statusImageManager;
-        
+
         public HangmanGameWindow()
         {
             PhrasesContainer phrasesContainer = new PhrasesContainer();
-            statusImageManager = new StatusImageManager();
             do
             {
                 phrase = phrasesContainer.RandomPhrase;
             }
             while (phrase.Content == "");
+            statusImageManager = new StatusImageManager();
             InitializeComponent();
-            statusImageManager.SetCurrentImage(StatusImage);
+            statusImageManager.SetNextImage(StatusImage);
             PlacePhrase(phrase);
         }
         private void GuessTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -70,7 +67,5 @@ namespace Simple_games
             GameOverWindow gameOverWindow = new GameOverWindow(dispString, this);
             gameOverWindow.Show();
         }
-
-
     }
 }

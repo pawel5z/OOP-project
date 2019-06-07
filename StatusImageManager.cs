@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace Simple_games
 {
     class StatusImageManager
     {
-        List<BitmapImage> imgCollection;
-        int currentImgNr = 0;
-        int imgCount = 7;
+        private readonly List<BitmapImage> imgCollection;
+        int currentImgNr = -1;
 
         public StatusImageManager()
         {
@@ -29,21 +24,21 @@ namespace Simple_games
             };
         }
 
-        public void SetCurrentImage(Image img)
-        {
-            img.Source = imgCollection[currentImgNr];
-        }
+        //public void SetCurrentImage(Image img)
+        //{
+        //    img.Source = imgCollection[currentImgNr];
+        //}
 
         public void SetNextImage(Image img)
         {
             currentImgNr = currentImgNr + 1;
-            SetCurrentImage(img);
+            img.Source = imgCollection[currentImgNr];
         }
 
         public int CurrentImgNr
         { get { return currentImgNr; } }
 
         public int ImgCount
-        { get { return imgCount; } }
+        { get { return imgCollection.Count; } }
     }
 }
