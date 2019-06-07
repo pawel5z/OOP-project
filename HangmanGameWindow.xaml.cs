@@ -3,23 +3,19 @@ using System.Windows.Controls;
 
 namespace Simple_games
 {
-    public partial class HangmanGameWindow : Window
+    /// <summary>
+    /// Interaction logic for class HangmanGameWindow.xaml
+    /// </summary>
+    public partial class HangmanGameWindow : Window, ISimpleGame
     {
-        private readonly Phrase phrase;
+        private Phrase phrase;
         private readonly StatusImageManager statusImageManager;
 
         public HangmanGameWindow()
         {
-            PhrasesContainer phrasesContainer = PhrasesContainer.Instance();
-            do
-            {
-                phrase = phrasesContainer.RandomPhrase;
-            }
-            while (phrase.Content == "");
             statusImageManager = StatusImageManager.Instance();
             InitializeComponent();
-            statusImageManager.SetNextImage(StatusImage);
-            PlacePhrase(phrase);
+            Init();
         }
         private void GuessTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -63,6 +59,28 @@ namespace Simple_games
             IsEnabled = false;
             GameOverWindow gameOverWindow = new GameOverWindow(dispString, this);
             gameOverWindow.Show();
+        }
+
+        void Init()
+        {
+            PhrasesContainer phrasesContainer = PhrasesContainer.Instance();
+            do
+            {
+                phrase = phrasesContainer.RandomPhrase;
+            }
+            while (phrase.Content == "");
+            statusImageManager.SetNextImage(StatusImage);
+            PlacePhrase(phrase);
+        }
+
+        public void Reset()
+        {
+            Hide();
+            MissesTextBlock.Text = "";
+            statusImageManager.Reset();
+            IsEnabled = true;
+            Init();
+            Show();
         }
     }
 }

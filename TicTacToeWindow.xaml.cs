@@ -6,7 +6,10 @@ using System.Windows.Media;
 
 namespace Simple_games
 {
-    public partial class TicTacToeWindow : Window
+    /// <summary>
+    /// Interaction logic for class TicTacToeWindow.xaml
+    /// </summary>
+    public partial class TicTacToeWindow : Window, ISimpleGame
     {
         private readonly List<Player> players = new List<Player>
         {
@@ -101,7 +104,7 @@ namespace Simple_games
         void GameOver(string dispString)
         {
             IsEnabled = false;
-            GameOverWindow gameOverWindow = new GameOverWindow(dispString, this);
+            GameOverWindow gameOverWindow = new GameOverWindow(dispString, this as ISimpleGame);
             gameOverWindow.Show();
         }
 
@@ -115,6 +118,20 @@ namespace Simple_games
         {
             button.Content = plr.PlayerSymbol;
             button.Foreground = plr.PlayerBrush;
+        }
+
+        public void Reset()
+        {
+            occupiedFields = 0;
+            curPlrNr = 0;
+            UIElementCollection boardFields = BoardGrid.Children;
+            for (int i = 0; i < boardFields.Count; i++)
+            {
+                boardFields[i].IsEnabled = true;
+                (boardFields[i] as Button).Content = "";
+            }
+            UpdateCurPlrTextBlock(players[curPlrNr].PlayerSymbol, players[curPlrNr].PlayerBrush);
+            IsEnabled = true;
         }
     }
 }

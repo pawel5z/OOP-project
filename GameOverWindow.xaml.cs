@@ -7,9 +7,9 @@ namespace Simple_games
     /// </summary>
     public partial class GameOverWindow : Window
     {
-        private readonly Window toClose;
-        MainMenuWindow mainMenuWindow;
-        public GameOverWindow(string dispString, Window toClose)
+        private readonly ISimpleGame toClose;
+
+        public GameOverWindow(string dispString, ISimpleGame toClose)
         {
             this.toClose = toClose;
             InitializeComponent();
@@ -18,9 +18,15 @@ namespace Simple_games
 
         private void MainMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            mainMenuWindow = new MainMenuWindow();
+            MainMenuWindow mainMenuWindow = new MainMenuWindow();
             mainMenuWindow.Show();
-            toClose.Close();
+            (toClose as Window).Close();
+            Close();
+        }
+
+        private void RestartButton_Click(object sender, RoutedEventArgs e)
+        {
+            toClose.Reset();
             Close();
         }
     }

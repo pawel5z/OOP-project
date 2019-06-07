@@ -43,6 +43,11 @@ namespace Simple_games
             img.Source = imgCollection[currentImgNr];
         }
 
+        public void Reset()
+        {
+            currentImgNr = -1;
+        }
+
         public int CurrentImgNr
         { get { return currentImgNr; } }
 

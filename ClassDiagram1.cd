@@ -10,18 +10,15 @@
   <Class Name="Simple_games.GameOverWindow" BaseTypeListCollapsed="true">
     <Position X="10.75" Y="1.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAIAAAAAAIAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAIAAAAAAAgA=</HashCode>
       <FileName>GameOverWindow.xaml.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="mainMenuWindow" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Simple_games.HangmanGameWindow" BaseTypeListCollapsed="true">
     <Position X="5" Y="4.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AABIgAAQAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABIgAAQAAAARAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>HangmanGameWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

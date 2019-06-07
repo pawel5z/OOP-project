@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:Simple_games"
         mc:Ignorable="d"
         Title="Game Over" Background="#FFE4E404" Height="336" Width="475" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Viewbox Stretch="Fill">
-    <Grid Margin="10">
-        <TextBlock x:Name="EndTextBlock" HorizontalAlignment="Center" Height="100" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" FontSize="72" TextAlignment="Center" Margin="25,20,33,0"/>
-        <Button x:Name="MainMenuButton" Content="Main menu" Height="77" VerticalAlignment="Center" Margin="120,165,128,45" HorizontalAlignment="Center" Width="200" Click="MainMenuButton_Click" FontSize="36"/>
-    </Grid>
+    <Viewbox Stretch="Uniform">
+        <StackPanel Margin="10">
+            <TextBlock x:Name="EndTextBlock" HorizontalAlignment="Center" Height="100" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="72" TextAlignment="Center" Margin="0,5,0,5"/>
+            <Button IsDefault="True" Click="RestartButton_Click" FontSize="36" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Restart" Margin="0,5,0,5"/>
+            <Button IsCancel="True" x:Name="MainMenuButton" Content="Main menu" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="MainMenuButton_Click" FontSize="36" Margin="0,5,0,5"/>
+        </StackPanel>
     </Viewbox>
 </Window>
