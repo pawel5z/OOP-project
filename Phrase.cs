@@ -1,44 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Hangman_game
+﻿namespace Simple_games
 {
     class Phrase
     {
-        string phrase = "";
-        string category = "";
-        string hiddenPhraseToDisplay = "";
-        string hiddenPhrase = "";
+        private readonly string content = "";
+        private readonly string category = "";
+        private string hiddenContentToDisplay = "";
+        private string hiddenContent = "";
 
         public Phrase(string phrase, string category)
         {
-            this.phrase = phrase;
+            this.content = phrase;
             this.category = category;
             GenerateHiddenPhrase();
         }
 
-        public string GetPhraseStr()
-        { return phrase; }
+        public string Content
+        {
+            get { return content; }
+        }
 
-        public string GetCategoryStr()
-        { return category; }
+        public string Category
+        {
+            get { return category; }
+        }
 
-        public string GetHiddenPhraseToDisplayStr()
-        { return hiddenPhraseToDisplay; }
-
+        public string HiddenPhraseToDisplay
+        {
+            get { return hiddenContentToDisplay; }
+        }
         void GenerateHiddenPhrase()
         {
-            for (int i = 0; i < phrase.Length; i++)
+            for (int i = 0; i < content.Length; i++)
             {
-                if (phrase[i] == ' ')
-                    hiddenPhrase += ' ';
+                if (content[i] == ' ')
+                    hiddenContent += ' ';
                 else
-                    hiddenPhrase += '_';
+                    hiddenContent += '_';
             }
-            hiddenPhraseToDisplay = ConvertToDisplayFormat(hiddenPhrase);
+            hiddenContentToDisplay = ConvertToDisplayFormat(hiddenContent);
         }
 
         string ConvertToDisplayFormat(string s)
@@ -47,28 +46,27 @@ namespace Hangman_game
             for (int i = 0; i < s.Length; i++)
             {
                 if (s[i] == ' ')
-                    retVal += ' ';
+                    retVal += " ";
                 else
                     retVal += s[i] + " ";
             }
-            retVal.Remove(retVal.Length - 1);
             return retVal;
         }
-        
+
         public void UncoverCharacters(char c)
         {
-            char[] hiddenPhraseChars = hiddenPhrase.ToCharArray();
-            for (int i = 0; i < hiddenPhrase.Length; i++)
-                if (phrase[i] == c)
+            char[] hiddenPhraseChars = hiddenContent.ToCharArray();
+            for (int i = 0; i < hiddenContent.Length; i++)
+                if (content[i] == c)
                     hiddenPhraseChars[i] = c;
-            hiddenPhrase = new string(hiddenPhraseChars);
-            hiddenPhraseToDisplay = ConvertToDisplayFormat(hiddenPhrase);
+            hiddenContent = new string(hiddenPhraseChars);
+            hiddenContentToDisplay = ConvertToDisplayFormat(hiddenContent);
         }
 
         public bool IsDecrypted()
         {
-            for (int i = 0; i < hiddenPhrase.Length; i++)
-                if (hiddenPhrase[i] == '_')
+            for (int i = 0; i < hiddenContent.Length; i++)
+                if (hiddenContent[i] == '_')
                     return false;
             return true;
         }

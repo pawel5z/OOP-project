@@ -55,18 +55,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ISimpleGame.cs" />
     <Compile Include="MainMenuWindow.xaml.cs">
       <DependentUpon>MainMenuWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Player.cs" />
     <Compile Include="StatusImageManager.cs" />
     <Compile Include="GameOverWindow.xaml.cs">
       <DependentUpon>GameOverWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TicTacToeWindow.xaml.cs">
+      <DependentUpon>TicTacToeWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainMenuWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="HangmanGameWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -75,11 +80,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Phrase.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="HangmanGameWindow.xaml.cs">
+      <DependentUpon>HangmanGameWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="GameOverWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TicTacToeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -103,16 +112,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="assets\phrases.dat" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="assets\gallows0.png" />
     <Resource Include="assets\gallows1.png" />
     <Resource Include="assets\gallows2.png" />
@@ -120,6 +119,17 @@
     <Resource Include="assets\gallows4.png" />
     <Resource Include="assets\gallows5.png" />
     <Resource Include="assets\gallows6.png" />
+    <Content Include="assets\phrases.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="ClassDiagram2.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,47 +1,62 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
-namespace Hangman_game
+namespace Simple_games
 {
-    class StatusImageManager
+    /// <summary>
+    /// Singleton class, because many instances of this class aren't desired
+    /// </summary>
+    sealed class StatusImageManager
     {
-        List<BitmapImage> imgCollection;
-        int current = 0;
-        int imgCount = 7;
+        private static StatusImageManager instance;
+        private readonly List<BitmapImage> imgCollection;
+        private int currentImgNr = -1;
 
-        public StatusImageManager()
+        private StatusImageManager()
         {
-            imgCollection = new List<BitmapImage>();
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows0.png", UriKind.Relative)));
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows1.png", UriKind.Relative)));
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows2.png", UriKind.Relative)));
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows3.png", UriKind.Relative)));
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows4.png", UriKind.Relative)));
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows5.png", UriKind.Relative)));
-            imgCollection.Add(new BitmapImage(new Uri("assets\\gallows6.png", UriKind.Relative)));
+            imgCollection = new List<BitmapImage>
+                {
+                    new BitmapImage(new Uri("assets\\gallows0.png", UriKind.Relative)),
+                    new BitmapImage(new Uri("assets\\gallows1.png", UriKind.Relative)),
+                    new BitmapImage(new Uri("assets\\gallows2.png", UriKind.Relative)),
+                    new BitmapImage(new Uri("assets\\gallows3.png", UriKind.Relative)),
+                    new BitmapImage(new Uri("assets\\gallows4.png", UriKind.Relative)),
+                    new BitmapImage(new Uri("assets\\gallows5.png", UriKind.Relative)),
+                    new BitmapImage(new Uri("assets\\gallows6.png", UriKind.Relative))
+                };
         }
 
-        public void SetCurrentImage(Image img)
+        public static StatusImageManager Instance()
         {
-            img.Source = imgCollection[current];
+            if (instance == null)
+            {
+                instance = new StatusImageManager();
+            }
+            return instance;
         }
 
         public void SetNextImage(Image img)
         {
-            current = current + 1;
-            SetCurrentImage(img);
+            currentImgNr += 1;
+            img.Source = imgCollection[currentImgNr];
         }
 
-        public int GetCurrentImgNr()
-        { return current; }
+        public void Reset()
+        {
+            currentImgNr = -1;
+        }
 
-        public int GetMaxImgNr()
-        { return imgCount; }
+        public int CurrentImgNr
+        { get { return currentImgNr; } }
+
+        public int ImgCount
+        { get { return imgCollection.Count; } }
+
+        public bool IsLastImage()
+        {
+            return currentImgNr == imgCollection.Count - 1;
+        }
     }
 }

@@ -1,23 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
-namespace Hangman_game
+namespace Simple_games
 {
-    class PhrasesContainer
+    sealed class PhrasesContainer
     {
-        int count = 0;
-        //Random rng;
+        private static PhrasesContainer instance;
+        private readonly int count = 0;
 
-        public PhrasesContainer()
+        private PhrasesContainer()
         {
-            //rng = new Random();
             try
             {
-                using (StreamReader sr = new StreamReader("phrases.dat"))
+                using (StreamReader sr = new StreamReader("assets\\phrases.dat"))
                 {
                     while (!sr.EndOfStream)
                     {
@@ -34,6 +29,13 @@ namespace Hangman_game
             }
         }
 
+        public static PhrasesContainer Instance()
+        {
+            if (instance == null)
+                instance = new PhrasesContainer();
+            return instance;
+        }
+
         public Phrase RandomPhrase
         {
             get
@@ -44,7 +46,7 @@ namespace Hangman_game
                 string phrase = "";
                 try
                 {
-                    using (StreamReader sr = new StreamReader("phrases.dat"))
+                    using (StreamReader sr = new StreamReader("assets\\phrases.dat"))
                     {
                         while (!sr.EndOfStream && i < phraseNr)
                         {
