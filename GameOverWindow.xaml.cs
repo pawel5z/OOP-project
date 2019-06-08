@@ -7,11 +7,11 @@ namespace Simple_games
     /// </summary>
     public partial class GameOverWindow : Window
     {
-        private readonly ISimpleGame toClose;
+        private readonly ISimpleGame invokedBy;
 
-        public GameOverWindow(string dispString, ISimpleGame toClose)
+        public GameOverWindow(string dispString, ISimpleGame invokedBy)
         {
-            this.toClose = toClose;
+            this.invokedBy = invokedBy;
             InitializeComponent();
             EndTextBlock.Text = dispString;
         }
@@ -20,13 +20,14 @@ namespace Simple_games
         {
             MainMenuWindow mainMenuWindow = new MainMenuWindow();
             mainMenuWindow.Show();
-            (toClose as Window).Close();
+            (invokedBy as Window).Close();
             Close();
         }
 
         private void RestartButton_Click(object sender, RoutedEventArgs e)
         {
-            toClose.Reset();
+            invokedBy.Reset();
+            invokedBy.Init();
             Close();
         }
     }

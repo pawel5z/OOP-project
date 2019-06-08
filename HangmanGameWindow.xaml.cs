@@ -15,6 +15,7 @@ namespace Simple_games
         {
             statusImageManager = StatusImageManager.Instance();
             InitializeComponent();
+            Reset();
             Init();
         }
         private void GuessTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -34,11 +35,11 @@ namespace Simple_games
                         GameOver("You win!");
                     }
                 }
-                else if (!MissesTextBlock.Text.Contains(guessStr[0].ToString()))
+                else if (!missesTextBlock.Text.Contains(guessStr[0].ToString()))
                 {
-                    MissesTextBlock.Text += guessStr[0].ToString() + " ";
+                    missesTextBlock.Text += guessStr[0].ToString() + " ";
                     statusImageManager.SetNextImage(StatusImage);
-                    if (statusImageManager.CurrentImgNr >= statusImageManager.ImgCount - 1)
+                    if (statusImageManager.IsLastImage())
                     {
                         GameOver("You lose!");
                     }
@@ -61,7 +62,7 @@ namespace Simple_games
             gameOverWindow.Show();
         }
 
-        void Init()
+        public void Init()
         {
             PhrasesContainer phrasesContainer = PhrasesContainer.Instance();
             do
@@ -69,18 +70,15 @@ namespace Simple_games
                 phrase = phrasesContainer.RandomPhrase;
             }
             while (phrase.Content == "");
-            statusImageManager.SetNextImage(StatusImage);
             PlacePhrase(phrase);
+            statusImageManager.SetNextImage(StatusImage);
         }
 
         public void Reset()
         {
-            Hide();
-            MissesTextBlock.Text = "";
+            missesTextBlock.Text = "";
             statusImageManager.Reset();
             IsEnabled = true;
-            Init();
-            Show();
         }
     }
 }

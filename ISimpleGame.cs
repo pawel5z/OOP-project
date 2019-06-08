@@ -8,6 +8,7 @@ namespace Simple_games
 {
     public interface ISimpleGame
     {
+        void Init();
         void Reset();
     }
 }

@@ -53,5 +53,10 @@ namespace Simple_games
 
         public int ImgCount
         { get { return imgCollection.Count; } }
+
+        public bool IsLastImage()
+        {
+            return currentImgNr == imgCollection.Count - 1;
+        }
     }
 }

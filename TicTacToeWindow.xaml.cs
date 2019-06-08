@@ -22,7 +22,7 @@ namespace Simple_games
         public TicTacToeWindow()
         {
             InitializeComponent();
-            UpdateCurPlrTextBlock(players[curPlrNr].PlayerSymbol, players[curPlrNr].PlayerBrush);
+            Init();
         }
 
         private void BoardButton_Click(object sender, RoutedEventArgs e)
@@ -120,6 +120,11 @@ namespace Simple_games
             button.Foreground = plr.PlayerBrush;
         }
 
+        public void Init()
+        {
+            UpdateCurPlrTextBlock(players[curPlrNr].PlayerSymbol, players[curPlrNr].PlayerBrush);
+        }
+
         public void Reset()
         {
             occupiedFields = 0;
@@ -129,8 +134,8 @@ namespace Simple_games
             {
                 boardFields[i].IsEnabled = true;
                 (boardFields[i] as Button).Content = "";
+
             }
-            UpdateCurPlrTextBlock(players[curPlrNr].PlayerSymbol, players[curPlrNr].PlayerBrush);
             IsEnabled = true;
         }
     }
