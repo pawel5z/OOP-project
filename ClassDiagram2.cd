@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Simple_games.App">
-    <Position X="0.5" Y="0.5" Width="3" />
+    <Position X="0.5" Y="1.5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>App.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Simple_games.GameOverWindow" BaseTypeListCollapsed="true">
-    <Position X="10.75" Y="0.75" Width="2" />
+    <Position X="7" Y="2.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAACAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>GameOverWindow.xaml.cs</FileName>
@@ -19,7 +19,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Simple_games.HangmanGameWindow" BaseTypeListCollapsed="true">
-    <Position X="4" Y="3" Width="2.25" />
+    <Position X="4" Y="4.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AABIgAAQAAAARAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>HangmanGameWindow.xaml.cs</FileName>
@@ -31,7 +31,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Simple_games.MainMenuWindow" BaseTypeListCollapsed="true">
-    <Position X="5.5" Y="0.5" Width="2.25" />
+    <Position X="10" Y="4" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAgAAAAACAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>MainMenuWindow.xaml.cs</FileName>
@@ -39,35 +39,35 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Simple_games.Phrase">
-    <Position X="2.75" Y="5.75" Width="2" />
+    <Position X="2.75" Y="7.25" Width="2" />
     <TypeIdentifier>
       <HashCode>QABCAAAAAgAAAAAAgAAAAAAQAAAAEACAAAEIAAAACAA=</HashCode>
       <FileName>Phrase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Simple_games.PhrasesContainer">
-    <Position X="5.5" Y="5.5" Width="1.5" />
+    <Position X="5.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAABAAAQAQAAAAAAAAAA=</HashCode>
       <FileName>PhrasesContainer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Simple_games.Player" Collapsed="true">
-    <Position X="10.25" Y="4.5" Width="1.5" />
+    <Position X="11.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAgAAAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Simple_games.StatusImageManager">
-    <Position X="0.5" Y="3.5" Width="1.75" />
+    <Position X="0.5" Y="5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAACBAAAAAAAAAAAAABQAAEAQQAAEAAAAAA=</HashCode>
       <FileName>StatusImageManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Simple_games.TicTacToeWindow" BaseTypeListCollapsed="true">
-    <Position X="7.5" Y="3.25" Width="2" />
+    <Position X="8.75" Y="7" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAABAAKBAAAAAAAAAAAACCAIAACAABAAAA=</HashCode>
       <FileName>TicTacToeWindow.xaml.cs</FileName>
@@ -77,8 +77,17 @@
     </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
+  <Class Name="System.Windows.Application" Collapsed="true">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Windows.Window" Collapsed="true">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
   <Interface Name="Simple_games.ISimpleGame">
-    <Position X="8.5" Y="0.75" Width="1.25" />
+    <Position X="7.25" Y="0.5" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>ISimpleGame.cs</FileName>
