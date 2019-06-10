@@ -5,20 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple_games"
         mc:Ignorable="d"
-        Title="Tic Tac Toe" Height="800" Width="800" WindowStartupLocation="CenterScreen" Background="#FF292525">
-    <Canvas>
-        <TextBlock FontSize="35" FontWeight="Bold" TextAlignment="Center" Name="curPlrTextBlock" Width="50" Height="50" Canvas.Left="375" Canvas.Top="10" Background="White"/>
-        <UniformGrid x:Name="BoardGrid" HorizontalAlignment="Center" Height="600" Margin="0" VerticalAlignment="Center" Width="600" Rows="3" Columns="3" Canvas.Left="96" Canvas.Top="84">
-            <Button FontSize="130" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Button FontSize="130" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Button FontSize="130" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Button FontSize="130" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Button FontSize="130" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Button FontSize="130" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Button FontSize="130" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Button FontSize="130" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Button FontSize="130" Click="BoardButton_Click" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        Title="Tic Tac Toe" Height="600" Width="600" WindowStartupLocation="CenterScreen" Background="#FF292525">
+    <Viewbox>
+    <StackPanel Margin="20">
+        <TextBlock Width="50" FontSize="35" HorizontalAlignment="Center" FontWeight="Bold" TextAlignment="Center" x:Name="curPlrTextBlock" Height="50" Background="White" Margin="0,0,0,10"/>
+        <UniformGrid x:Name="BoardGrid" HorizontalAlignment="Center" Height="400" Margin="0,10,0,0" VerticalAlignment="Center" Width="400" Rows="3" Columns="3" >
+            <Button FontSize="100" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button FontSize="100" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button FontSize="100" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button FontSize="100" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button FontSize="100" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button FontSize="100" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button FontSize="100" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button FontSize="100" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button FontSize="100" FontWeight="Bold" Click="BoardButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </UniformGrid>
-
-    </Canvas>
+    </StackPanel>
+    </Viewbox>
 </Window>

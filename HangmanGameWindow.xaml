@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple_games"
         mc:Ignorable="d"
-        Title="Hangman game" Background="#FFD2DC70" MinWidth="800" MinHeight="450" Width="800" Height="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Hangman game" Background="#FFD2DC70" Width="800" Height="450" WindowStartupLocation="CenterScreen">
+    <Viewbox>
     <StackPanel Margin="10,10,10,10" Orientation="Horizontal">
         <Image x:Name="StatusImage" Height="399" Width="325" Stretch="Fill" Cursor="None" Margin="0,0,5,0"/>
 
@@ -34,4 +35,5 @@
 
 
     </StackPanel>
+    </Viewbox>
 </Window>
