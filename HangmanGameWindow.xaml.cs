@@ -18,6 +18,12 @@ namespace Simple_games
             Reset();
             Init();
         }
+
+        /// <summary>
+        /// Handle user input from guessTextBox.
+        /// </summary>
+        /// <param name="sender">This will always be guessTextBox, because only it can call this method.</param>
+        /// <param name="e"></param>
         private void GuessTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
@@ -62,18 +68,23 @@ namespace Simple_games
             gameOverWindow.Show();
         }
 
+        /// <summary>
+        /// Get random phrase from phrasesContainer.
+        /// Place it in the HangManGameWindow.
+        /// Set the first image from statusImageManager.
+        /// </summary>
         public void Init()
         {
             PhrasesContainer phrasesContainer = PhrasesContainer.Instance();
-            do
-            {
-                phrase = phrasesContainer.RandomPhrase;
-            }
-            while (phrase.Content == "");
+            phrase = phrasesContainer.RandomPhrase;
             PlacePhrase(phrase);
             statusImageManager.SetNextImage(StatusImage);
         }
 
+        /// <summary>
+        /// Clear missedTextBlock.
+        /// Set HangmanGameWindow enabled.
+        /// </summary>
         public void Reset()
         {
             missesTextBlock.Text = "";

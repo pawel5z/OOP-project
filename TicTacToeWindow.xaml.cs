@@ -6,9 +6,6 @@ using System.Windows.Media;
 
 namespace Simple_games
 {
-    /// <summary>
-    /// Interaction logic for class TicTacToeWindow.xaml
-    /// </summary>
     public partial class TicTacToeWindow : Window, ISimpleGame
     {
         private readonly List<Player> players = new List<Player>
@@ -25,6 +22,11 @@ namespace Simple_games
             Init();
         }
 
+        /// <summary>
+        /// Handle the one of the board buttons click event.
+        /// </summary>
+        /// <param name="sender">This will always be one of 9 board buttons.</param>
+        /// <param name="e"></param>
         private void BoardButton_Click(object sender, RoutedEventArgs e)
         {
             Button boardButton = (Button)sender;
@@ -41,9 +43,16 @@ namespace Simple_games
             boardButton.IsEnabled = false; /// deactivate button in order not to take care of it anymore (it has already got 'X' or 'O')
         }
 
+        /// <summary>
+        /// Check for three in row/column/diagonal symbols of player who placed his symbols last.
+        /// </summary>
+        /// <param name="plrSym">Player who placed last symbol on the board i.e. he may be the winner.</param>
+        /// <param name="boardGrid"></param>
+        /// <returns></returns>
         bool CheckForWin(string plrSym, UniformGrid boardGrid)
         {
             Button[,] boardButtons = new Button[3, 3];
+
             /// convert list of buttons to 2d array of buttons for more convenient usage
             for (int i = 0, j = 0, k = 0; k < boardGrid.Children.Count; k++)
             {
@@ -101,20 +110,32 @@ namespace Simple_games
 
             return false;
         }
-        void GameOver(string dispString)
+
+        private void GameOver(string dispString)
         {
             IsEnabled = false;
             GameOverWindow gameOverWindow = new GameOverWindow(dispString, this as ISimpleGame);
             gameOverWindow.Show();
         }
 
-        void UpdateCurPlrTextBlock(string plrSymbol, Brush plrBrush)
+        /// <summary>
+        /// Update upper text block informing about which player's turn is now.
+        /// Set it's content and text color to the one connected with current player.
+        /// </summary>
+        /// <param name="plrSymbol"></param>
+        /// <param name="plrBrush"></param>
+        private void UpdateCurPlrTextBlock(string plrSymbol, Brush plrBrush)
         {
             curPlrTextBlock.Text = plrSymbol;
             curPlrTextBlock.Foreground = plrBrush;
         }
 
-        void PlaceSymbol(Button button, Player plr)
+        /// <summary>
+        /// Places current player's symbol on the board and sets its color to current player's color.
+        /// </summary>
+        /// <param name="button"></param>
+        /// <param name="plr"></param>
+        private void PlaceSymbol(Button button, Player plr)
         {
             button.Content = plr.PlayerSymbol;
             button.Foreground = plr.PlayerBrush;
@@ -125,6 +146,9 @@ namespace Simple_games
             UpdateCurPlrTextBlock(players[curPlrNr].PlayerSymbol, players[curPlrNr].PlayerBrush);
         }
 
+        /// <summary>
+        /// Clear the board (buttons placed on a grid) and game status (occupiedFields).
+        /// </summary>
         public void Reset()
         {
             occupiedFields = 0;

@@ -2,6 +2,9 @@
 
 namespace Simple_games
 {
+    /// <summary>
+    /// Class designed for TicTacToeWindow.
+    /// </summary>
     class Player
     {
         private readonly string playerSymbol;

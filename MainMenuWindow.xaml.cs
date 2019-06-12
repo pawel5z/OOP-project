@@ -2,12 +2,9 @@
 
 namespace Simple_games
 {
-    /// <summary>
-    /// Logika interakcji dla klasy MainMenu.xaml
-    /// </summary>
     public partial class MainMenuWindow : Window
     {
-        Window gameWindow;
+        private Window gameWindow;
         public MainMenuWindow()
         {
             InitializeComponent();

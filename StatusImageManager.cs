@@ -5,9 +5,6 @@ using System.Windows.Media.Imaging;
 
 namespace Simple_games
 {
-    /// <summary>
-    /// Singleton class, because many instances of this class aren't desired
-    /// </summary>
     sealed class StatusImageManager
     {
         private static StatusImageManager instance;
@@ -37,6 +34,10 @@ namespace Simple_games
             return instance;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="img">Image which source is to set.</param>
         public void SetNextImage(Image img)
         {
             currentImgNr += 1;
@@ -54,6 +55,10 @@ namespace Simple_games
         public int ImgCount
         { get { return imgCollection.Count; } }
 
+        /// <summary>
+        /// Check if index of current image is an index of the last image.
+        /// </summary>
+        /// <returns></returns>
         public bool IsLastImage()
         {
             return currentImgNr == imgCollection.Count - 1;

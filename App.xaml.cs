@@ -11,6 +11,11 @@ namespace Simple_games
             rng = new Random();
         }
 
+        /// <summary>
+        /// Display message about unhandled exception.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
             MessageBox.Show("An unhandled exception just occured" + e.Exception.Message);

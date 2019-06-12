@@ -4,8 +4,17 @@
     {
         private readonly string content = "";
         private readonly string category = "";
-        private string hiddenContentToDisplay = "";
+
+        /// <summary>
+        /// @content with each non-whitespace character replaced by '_'.
+        /// </summary>
         private string hiddenContent = "";
+
+        /// <summary>
+        /// @hiddenContent with additional space character inserted between each pair of '_'.
+        /// Made for easier and clearer display.
+        /// </summary>
+        private string hiddenContentToDisplay = "";
 
         public Phrase(string phrase, string category)
         {
@@ -28,6 +37,7 @@
         {
             get { return hiddenContentToDisplay; }
         }
+
         void GenerateHiddenPhrase()
         {
             for (int i = 0; i < content.Length; i++)
@@ -40,6 +50,11 @@
             hiddenContentToDisplay = ConvertToDisplayFormat(hiddenContent);
         }
 
+        /// <summary>
+        /// Insert space between each pair of '_' in s string.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns>s string with '_' inserted between each pair of '_'.</returns>
         string ConvertToDisplayFormat(string s)
         {
             string retVal = "";
@@ -53,6 +68,11 @@
             return retVal;
         }
 
+        /// <summary>
+        /// Find positions in @hiddenContent which represent c character in @content and set them to this character.
+        /// Using char[], because there isn't possibility to modify single string characters. :(
+        /// </summary>
+        /// <param name="c"></param>
         public void UncoverCharacters(char c)
         {
             char[] hiddenPhraseChars = hiddenContent.ToCharArray();
@@ -63,6 +83,10 @@
             hiddenContentToDisplay = ConvertToDisplayFormat(hiddenContent);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>True if @hiddenContent doesn't contain any '_' characters. False in other case.</returns>
         public bool IsDecrypted()
         {
             for (int i = 0; i < hiddenContent.Length; i++)
