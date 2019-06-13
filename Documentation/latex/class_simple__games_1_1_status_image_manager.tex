@@ -1,0 +1,94 @@
+\section{Simple\+\_\+games.\+Status\+Image\+Manager Class Reference}
+\label{class_simple__games_1_1_status_image_manager}\index{Simple\_games.StatusImageManager@{Simple\_games.StatusImageManager}}
+
+
+Class taking care of displaying images showing current status of Hangman game.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Set\+Next\+Image} (Image img)
+\begin{DoxyCompactList}\small\item\em Set img\textquotesingle{}s source to the next image from image\+Collection. \end{DoxyCompactList}\item 
+void \textbf{ Reset} ()
+\begin{DoxyCompactList}\small\item\em Set current\+Img\+Nr to -\/1 (i.\+e. start from begginning). \end{DoxyCompactList}\item 
+bool \textbf{ Is\+Last\+Image} ()
+\begin{DoxyCompactList}\small\item\em Check if index of current image is an index of the last image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Status\+Image\+Manager} \textbf{ Instance} ()
+\begin{DoxyCompactList}\small\item\em Singleton constructor method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_simple__games_1_1_status_image_manager_a507f8f7f3ac96de8d67319e8b9aab89c}} 
+int {\bfseries Current\+Img\+Nr}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\mbox{\label{class_simple__games_1_1_status_image_manager_a20839ce7741e45f2efc32d2aa97f9cd7}} 
+int {\bfseries Img\+Count}\hspace{0.3cm}{\ttfamily  [get]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class taking care of displaying images showing current status of Hangman game. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_simple__games_1_1_status_image_manager_a87f18c6e591ab5339d9ad29668a667d4}} 
+\index{Simple\_games.StatusImageManager@{Simple\_games.StatusImageManager}!Instance@{Instance}}
+\index{Instance@{Instance}!Simple\_games.StatusImageManager@{Simple\_games.StatusImageManager}}
+\subsubsection{Instance()}
+{\footnotesize\ttfamily static \textbf{ Status\+Image\+Manager} Simple\+\_\+games.\+Status\+Image\+Manager.\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Singleton constructor method. 
+
+\begin{DoxyReturn}{Returns}
+Existing instance of \doxyref{Status\+Image\+Manager}{p.}{class_simple__games_1_1_status_image_manager} or new instance if no instance already exists.
+\end{DoxyReturn}
+\mbox{\label{class_simple__games_1_1_status_image_manager_a8d5ea113ca7cfc31dc735f7abe071ba8}} 
+\index{Simple\_games.StatusImageManager@{Simple\_games.StatusImageManager}!IsLastImage@{IsLastImage}}
+\index{IsLastImage@{IsLastImage}!Simple\_games.StatusImageManager@{Simple\_games.StatusImageManager}}
+\subsubsection{IsLastImage()}
+{\footnotesize\ttfamily bool Simple\+\_\+games.\+Status\+Image\+Manager.\+Is\+Last\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if index of current image is an index of the last image. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_simple__games_1_1_status_image_manager_a3b51e79df0436458e5dcccd3ab3e403b}} 
+\index{Simple\_games.StatusImageManager@{Simple\_games.StatusImageManager}!Reset@{Reset}}
+\index{Reset@{Reset}!Simple\_games.StatusImageManager@{Simple\_games.StatusImageManager}}
+\subsubsection{Reset()}
+{\footnotesize\ttfamily void Simple\+\_\+games.\+Status\+Image\+Manager.\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set current\+Img\+Nr to -\/1 (i.\+e. start from begginning). 
+
+\mbox{\label{class_simple__games_1_1_status_image_manager_adc0225a54123225006a3f3ffd09750a8}} 
+\index{Simple\_games.StatusImageManager@{Simple\_games.StatusImageManager}!SetNextImage@{SetNextImage}}
+\index{SetNextImage@{SetNextImage}!Simple\_games.StatusImageManager@{Simple\_games.StatusImageManager}}
+\subsubsection{SetNextImage()}
+{\footnotesize\ttfamily void Simple\+\_\+games.\+Status\+Image\+Manager.\+Set\+Next\+Image (\begin{DoxyParamCaption}\item[{Image}]{img }\end{DoxyParamCaption})}
+
+
+
+Set img\textquotesingle{}s source to the next image from image\+Collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & Image which source is to set.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Projekty/\+U\+Wr/\+Programowanie obiektowe/\+Simple games/Status\+Image\+Manager.\+cs\end{DoxyCompactItemize}

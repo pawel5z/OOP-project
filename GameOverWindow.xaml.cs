@@ -3,7 +3,7 @@
 namespace Simple_games
 {
     /// <summary>
-    /// Logika interakcji dla klasy WinWindow.xaml
+    /// Interaction logic for class GameOverWindow.
     /// </summary>
     public partial class GameOverWindow : Window
     {
@@ -12,7 +12,7 @@ namespace Simple_games
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="dispString"></param>
+        /// <param name="dispString">String to display in GameOverWindow.</param>
         /// <param name="invokedBy">The window implementing ISimpleGame that called this constructor.</param>
         public GameOverWindow(string dispString, ISimpleGame invokedBy)
         {
@@ -22,7 +22,7 @@ namespace Simple_games
         }
 
         /// <summary>
-        /// Close @invokedBy game window, this window and create MainMenuWindow.
+        /// Close invokedBy game window, this window and create MainMenuWindow.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

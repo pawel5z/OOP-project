@@ -1,0 +1,56 @@
+\section{Simple\+\_\+games.\+Phrases\+Container Class Reference}
+\label{class_simple__games_1_1_phrases_container}\index{Simple\_games.PhrasesContainer@{Simple\_games.PhrasesContainer}}
+
+
+This is lazy container i.\+e. it doesn\textquotesingle{}t contain all phrases in one of its fields. Instead of that, it calculates number of available phrases upon construction and then, when asked for random phrase, it uses \doxyref{App}{p.}{class_simple__games_1_1_app}\textquotesingle{}s static rng to generate random number between 0 and count and reads from assets\textbackslash{}phrases.\+dat till that number.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Phrases\+Container} \textbf{ Instance} ()
+\begin{DoxyCompactList}\small\item\em Singleton constructor method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Phrase} \textbf{ Random\+Phrase}\hspace{0.3cm}{\ttfamily  [get]}
+\begin{DoxyCompactList}\small\item\em Read to (count -\/ 1) phrase and return that phrase i.\+e. category and content strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is lazy container i.\+e. it doesn\textquotesingle{}t contain all phrases in one of its fields. Instead of that, it calculates number of available phrases upon construction and then, when asked for random phrase, it uses \doxyref{App}{p.}{class_simple__games_1_1_app}\textquotesingle{}s static rng to generate random number between 0 and count and reads from assets\textbackslash{}phrases.\+dat till that number. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_simple__games_1_1_phrases_container_ab468d514e06f6296268187a5e8650aa0}} 
+\index{Simple\_games.PhrasesContainer@{Simple\_games.PhrasesContainer}!Instance@{Instance}}
+\index{Instance@{Instance}!Simple\_games.PhrasesContainer@{Simple\_games.PhrasesContainer}}
+\subsubsection{Instance()}
+{\footnotesize\ttfamily static \textbf{ Phrases\+Container} Simple\+\_\+games.\+Phrases\+Container.\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Singleton constructor method. 
+
+\begin{DoxyReturn}{Returns}
+Existing instance of \doxyref{Phrases\+Container}{p.}{class_simple__games_1_1_phrases_container} or new instance if no instance already exists.
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\mbox{\label{class_simple__games_1_1_phrases_container_abad5258fbcf9f08f0e3be39869e72159}} 
+\index{Simple\_games.PhrasesContainer@{Simple\_games.PhrasesContainer}!RandomPhrase@{RandomPhrase}}
+\index{RandomPhrase@{RandomPhrase}!Simple\_games.PhrasesContainer@{Simple\_games.PhrasesContainer}}
+\subsubsection{RandomPhrase}
+{\footnotesize\ttfamily \textbf{ Phrase} Simple\+\_\+games.\+Phrases\+Container.\+Random\+Phrase\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Read to (count -\/ 1) phrase and return that phrase i.\+e. category and content strings. 
+
+Uses standard read-\/from-\/file method taken from {\texttt{ https\+://docs.\+microsoft.\+com/pl-\/pl/dotnet/standard/io/how-\/to-\/read-\/text-\/from-\/a-\/file}}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Projekty/\+U\+Wr/\+Programowanie obiektowe/\+Simple games/Phrases\+Container.\+cs\end{DoxyCompactItemize}

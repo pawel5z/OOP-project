@@ -6,6 +6,9 @@ using System.Windows.Media;
 
 namespace Simple_games
 {
+    /// <summary>
+    /// Interaction logic for class TicTacToeWindow.
+    /// </summary>
     public partial class TicTacToeWindow : Window, ISimpleGame
     {
         private readonly List<Player> players = new List<Player>

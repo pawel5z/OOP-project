@@ -3,8 +3,14 @@ using System.Windows;
 
 namespace Simple_games
 {
+    /// <summary>
+    /// Main class controlling application.
+    /// </summary>
     public partial class App : Application
     {
+        /// <summary>
+        /// Random numbers generator.
+        /// </summary>
         public static Random rng;
         public App()
         {

@@ -6,8 +6,8 @@ namespace Simple_games
     /// <summary>
     /// This is lazy container i.e. it doesn't contain all phrases in one of its fields.
     /// Instead of that, it calculates number of available phrases upon construction and then,
-    /// when asked for random phrase, it uses App's static @rng to generate random number between
-    /// 0 and @count and reads from assets\phrases.dat till that number.
+    /// when asked for random phrase, it uses App's static rng to generate random number between
+    /// 0 and count and reads from assets\phrases.dat till that number.
     /// </summary>
     sealed class PhrasesContainer
     {
@@ -15,8 +15,8 @@ namespace Simple_games
         private readonly int count = 0;
 
         /// <summary>
-        /// Standard read-from-file method taken from https://docs.microsoft.com/pl-pl/dotnet/standard/io/how-to-read-text-from-a-file.
         /// Calculates number of phrases stored in assets\phrases.dat file.
+        /// Uses standard read-from-file method taken from https://docs.microsoft.com/pl-pl/dotnet/standard/io/how-to-read-text-from-a-file.
         /// </summary>
         private PhrasesContainer()
         {
@@ -40,6 +40,10 @@ namespace Simple_games
             }
         }
 
+        /// <summary>
+        /// Singleton constructor method.
+        /// </summary>
+        /// <returns>Existing instance of PhrasesContainer or new instance if no instance already exists.</returns>
         public static PhrasesContainer Instance()
         {
             if (instance == null)
@@ -48,7 +52,9 @@ namespace Simple_games
         }
 
         /// <summary>
-        /// Read to (@count - 1) phrase and return that phrase i.e. category and content strings.
+        /// Read to (count - 1) phrase and return that phrase i.e. category and content strings.
+        /// 
+        /// Uses standard read-from-file method taken from https://docs.microsoft.com/pl-pl/dotnet/standard/io/how-to-read-text-from-a-file.
         /// </summary>
         public Phrase RandomPhrase
         {

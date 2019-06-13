@@ -1,17 +1,20 @@
 ﻿namespace Simple_games
 {
+    /// <summary>
+    /// Class containing phrase (and its category) used in Hangman game.
+    /// </summary>
     class Phrase
     {
         private readonly string content = "";
         private readonly string category = "";
 
         /// <summary>
-        /// @content with each non-whitespace character replaced by '_'.
+        /// content with each non-whitespace character replaced by '_'.
         /// </summary>
         private string hiddenContent = "";
 
         /// <summary>
-        /// @hiddenContent with additional space character inserted between each pair of '_'.
+        /// hiddenContent with additional space character inserted between each pair of '_'.
         /// Made for easier and clearer display.
         /// </summary>
         private string hiddenContentToDisplay = "";
@@ -69,7 +72,7 @@
         }
 
         /// <summary>
-        /// Find positions in @hiddenContent which represent c character in @content and set them to this character.
+        /// Find positions in hiddenContent which represent c character in @content and set them to this character.
         /// Using char[], because there isn't possibility to modify single string characters. :(
         /// </summary>
         /// <param name="c"></param>
@@ -84,9 +87,9 @@
         }
 
         /// <summary>
-        /// 
+        /// Check if phrase has been decrypted.
         /// </summary>
-        /// <returns>True if @hiddenContent doesn't contain any '_' characters. False in other case.</returns>
+        /// <returns>True if hiddenContent doesn't contain any '_' characters. False in other case.</returns>
         public bool IsDecrypted()
         {
             for (int i = 0; i < hiddenContent.Length; i++)

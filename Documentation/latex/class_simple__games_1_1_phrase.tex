@@ -1,0 +1,70 @@
+\section{Simple\+\_\+games.\+Phrase Class Reference}
+\label{class_simple__games_1_1_phrase}\index{Simple\_games.Phrase@{Simple\_games.Phrase}}
+
+
+Class containing phrase (and its category) used in Hangman game.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_simple__games_1_1_phrase_ae25309fdfd530b589c2e8ba1c71b1cf1}} 
+{\bfseries Phrase} (string phrase, string category)
+\item 
+void \textbf{ Uncover\+Characters} (char c)
+\begin{DoxyCompactList}\small\item\em Find positions in hidden\+Content which represent c character in @content and set them to this character. Using char[], because there isn\textquotesingle{}t possibility to modify single string characters. \+:( \end{DoxyCompactList}\item 
+bool \textbf{ Is\+Decrypted} ()
+\begin{DoxyCompactList}\small\item\em Check if phrase has been decrypted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_simple__games_1_1_phrase_ad8c359f8f162209b2c1c6e0232389637}} 
+string {\bfseries Content}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\mbox{\label{class_simple__games_1_1_phrase_ad75f04fd9c7f03818d4a8c38292699e5}} 
+string {\bfseries Category}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\mbox{\label{class_simple__games_1_1_phrase_a9e3735ed10e5c7f11da0fc613e72a879}} 
+string {\bfseries Hidden\+Phrase\+To\+Display}\hspace{0.3cm}{\ttfamily  [get]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class containing phrase (and its category) used in Hangman game. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_simple__games_1_1_phrase_a27c0d580bedd3c52c49e3f3d359768eb}} 
+\index{Simple\_games.Phrase@{Simple\_games.Phrase}!IsDecrypted@{IsDecrypted}}
+\index{IsDecrypted@{IsDecrypted}!Simple\_games.Phrase@{Simple\_games.Phrase}}
+\subsubsection{IsDecrypted()}
+{\footnotesize\ttfamily bool Simple\+\_\+games.\+Phrase.\+Is\+Decrypted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if phrase has been decrypted. 
+
+\begin{DoxyReturn}{Returns}
+True if hidden\+Content doesn\textquotesingle{}t contain any \textquotesingle{}\+\_\+\textquotesingle{} characters. False in other case.
+\end{DoxyReturn}
+\mbox{\label{class_simple__games_1_1_phrase_a2abb90bb41cd0333c164b8d8ab6fa36a}} 
+\index{Simple\_games.Phrase@{Simple\_games.Phrase}!UncoverCharacters@{UncoverCharacters}}
+\index{UncoverCharacters@{UncoverCharacters}!Simple\_games.Phrase@{Simple\_games.Phrase}}
+\subsubsection{UncoverCharacters()}
+{\footnotesize\ttfamily void Simple\+\_\+games.\+Phrase.\+Uncover\+Characters (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Find positions in hidden\+Content which represent c character in @content and set them to this character. Using char[], because there isn\textquotesingle{}t possibility to modify single string characters. \+:( 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Projekty/\+U\+Wr/\+Programowanie obiektowe/\+Simple games/Phrase.\+cs\end{DoxyCompactItemize}

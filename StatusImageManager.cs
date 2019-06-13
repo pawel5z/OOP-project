@@ -5,6 +5,9 @@ using System.Windows.Media.Imaging;
 
 namespace Simple_games
 {
+    /// <summary>
+    /// Class taking care of displaying images showing current status of Hangman game.
+    /// </summary>
     sealed class StatusImageManager
     {
         private static StatusImageManager instance;
@@ -25,6 +28,10 @@ namespace Simple_games
                 };
         }
 
+        /// <summary>
+        /// Singleton constructor method.
+        /// </summary>
+        /// <returns>Existing instance of StatusImageManager or new instance if no instance already exists.</returns>
         public static StatusImageManager Instance()
         {
             if (instance == null)
@@ -35,7 +42,7 @@ namespace Simple_games
         }
 
         /// <summary>
-        /// 
+        /// Set img's source to the next image from imageCollection.
         /// </summary>
         /// <param name="img">Image which source is to set.</param>
         public void SetNextImage(Image img)
@@ -44,6 +51,9 @@ namespace Simple_games
             img.Source = imgCollection[currentImgNr];
         }
 
+        /// <summary>
+        /// Set currentImgNr to -1 (i.e. start from begginning).
+        /// </summary>
         public void Reset()
         {
             currentImgNr = -1;

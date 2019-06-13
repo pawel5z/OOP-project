@@ -4,7 +4,7 @@ using System.Windows.Controls;
 namespace Simple_games
 {
     /// <summary>
-    /// Interaction logic for class HangmanGameWindow.xaml
+    /// Interaction logic for class HangmanGameWindow.
     /// </summary>
     public partial class HangmanGameWindow : Window, ISimpleGame
     {

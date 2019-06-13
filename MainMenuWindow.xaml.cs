@@ -2,6 +2,9 @@
 
 namespace Simple_games
 {
+    /// <summary>
+    /// Interaction logic for class MainMenuWindow.
+    /// </summary>
     public partial class MainMenuWindow : Window
     {
         private Window gameWindow;
